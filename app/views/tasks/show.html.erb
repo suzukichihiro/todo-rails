@@ -1,0 +1,27 @@
+<% content_for :title do %>
+タスク詳細
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<div　class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-3">
+
+      <article class="thumbnail">
+        <img src="<%= asset_path "todo.jpg" %>" />
+        <h3>タスク名： <%= @task.content %></h3>
+        <p>
+          <strong>作成日時:</strong>
+        </p>
+        <p>
+          <%= link_to '<button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>　編集する</button>'.html_safe, edit_task_path(@task) %>
+
+          <%= link_to '<button type="button" class="btn btn-danger">中止する</button>'.html_safe, tasks_path %>
+
+        </p>
+
+      </article>
+
+    </div>
+  </div>
+</div>
