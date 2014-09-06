@@ -1,11 +1,11 @@
 class TasksController < ApplicationController
-  # before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
   def index
     @tasks = Task.all
-    render :action => "tasks/index"
+    render :action => "index"
   end
 
   # GET /tasks/1

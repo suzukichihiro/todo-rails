@@ -11,7 +11,8 @@
         <img src="<%= asset_path "todo.jpg" %>" />
         <h3>タスク名： <%= @task.content %></h3>
         <p>
-          <strong>作成日時:</strong>
+          <strong>作成時:</strong>
+          <%= datetime_select :time, use_month_numbers: true %>
         </p>
         <p>
           <%= link_to '<button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>　編集する</button>'.html_safe, edit_task_path(@task) %>

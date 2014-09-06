@@ -1,35 +1,38 @@
-<h2>タスク一覧</h2>
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span12">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span6">
-            <table class="table table-striped">
-              <tbody>
-                <% @tasks.each do |task| %>
-                <tr>
-                  <td width="60%">
-                    <%= task.content %>
-                  </td>
-                  <td><%= Time %></td>
-                  <td>
-                      <%= link_to '<button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-info-sign"></i>　表示</button>'.html_safe, task %>
-
-                    <!-- <button type="button" class="btn btn-warning"> -->
-                    <!--   <%= link_to 'Edit', edit_task_path(task) %> -->
-                    <!-- </button> -->
-                      <%= link_to '<button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove-sign"></i>　削除</button>'.html_safe, task, method: :delete, data: { confirm: '本当に削除しますか?' } %>
-                      <!-- <%= link_to '削除', task, method: :delete, data: { confirm: 'Are you sure?' } %> -->
-                    </button>
-
-                  </td>
-
-                </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
-        </div>
-    </div>
-</div>
+<h2>タスク一覧</h2> 
+ <div class="container-fluid"> 
+   <div class="row-fluid"> 
+     <div class="span12"> 
+       <div class="container-fluid"> 
+         <div class="row-fluid"> 
+           <div class="span6"> 
+             <table class="table table-striped"> 
+               <tbody> 
+                 <% @tasks.each do |task| %> 
+                 <tr> 
+                   <td width="60%">
+                     <%= datetime_select :time, use_month_numbers: true %>
+                     <%= task.content %>
+                   </td>
+                   <td> 
+                       <%= link_to '<button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-info-sign"></i>　表示</button>'.html_safe, task %> 
+ 
+ 
+                     <!-- <button type="button" class="btn btn-warning"> --> 
+                     <!--   <%= link_to 'Edit', edit_task_path(task) %> --> 
+                     <!-- </button> --> 
+                       <%= link_to '<button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove-sign"></i>　削除</button>'.html_safe, task, method: :delete, data: { confirm: '本当に削除しますか?' } %> 
+                       <!-- <%= link_to '削除', task, method: :delete, data: { confirm: 'Are you sure?' } %> --> 
+                     </button> 
+ 
+ 
+                   </td> 
+ 
+ 
+                 </tr> 
+                 <% end %> 
+               </tbody> 
+             </table> 
+           </div> 
+         </div> 
+     </div> 
+ </div> 

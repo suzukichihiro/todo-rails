@@ -20,9 +20,11 @@
 
             <%= f.text_area :content , class: 'form-control', rows: '5' %>
           </div>
+          <div class="actions">
 
            <div class="field">
              <%= f.label :time %><br />
+             <%= datetime_select :time, use_month_numbers: true %>
            </div>
 
           <div class="actions">
